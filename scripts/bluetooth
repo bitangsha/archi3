@@ -1,0 +1,7 @@
+#!/bin/sh
+
+sudo pacman -S --needed --noconfirm bluez
+sudo pacman -S --needed --noconfirm blueman
+sudo pacman -S --needed --noconfirm bluez-utils
+
+sudo systemctl enable --now bluetooth

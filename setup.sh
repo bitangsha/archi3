@@ -57,17 +57,9 @@ sudo pacman -S --needed --noconfirm gvfs-mtp
 sudo pacman -S --needed --noconfirm ntfs-3g
 sudo pacman -S --needed --noconfirm exfatprogs
 
-# Bluetooth
-sudo pacman -S --needed --noconfirm bluez
-sudo pacman -S --needed --noconfirm blueman
-sudo pacman -S --needed --noconfirm bluez-utils
-sudo systemctl enable --now bluetooth
 
 # Development
 sudo pacman -S --needed --noconfirm code
-
-
-
 
 
 # Run scripts
@@ -75,6 +67,7 @@ chmod +x scripts/*
 
 sh scripts/nvidia
 sh scripts/configure_git
+sh scripts/bluetooth
 sh scripts/yay
 sh scripts/i3setup
 sh scripts/dotfiles
