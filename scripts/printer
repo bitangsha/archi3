@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+sudo pacman -S --needed --noconfirm system-config-printer
+sudo pacman -S --needed --noconfirm cups
+sudo pacman -S --needed --noconfirm hplip
+
+if systemctl is-enabled cups.service >/dev/null 2>&1; then
+  :
+else
+  sudo systemctl enable --now cups.service
+fi

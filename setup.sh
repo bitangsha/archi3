@@ -12,17 +12,25 @@ sudo pacman -S --needed --noconfirm xorg-server
 sudo pacman -S --needed --noconfirm xorg-xkill
 sudo pacman -S --needed --noconfirm xorg-xrandr
 
-# Utilities
+# Appearance setup
 sudo pacman -S --needed --noconfirm feh
+sudo pacman -S --needed --noconfirm picom
+sudo pacman -S --needed --noconfirm starship
 sudo pacman -S --needed --noconfirm fastfetch
 sudo pacman -S --needed --noconfirm eza
-sudo pacman -S --needed --noconfirm firefox
-sudo pacman -S --needed --noconfirm git
 sudo pacman -S --needed --noconfirm nwg-look
+
+
+# Utilities
+sudo pacman -S --needed --noconfirm alacritty
+sudo pacman -S --needed --noconfirm rofi
+sudo pacman -S --needed --noconfirm firefox
+sudo pacman -S --needed --noconfirm nano
 sudo pacman -S --needed --noconfirm copyq
 sudo pacman -S --needed --noconfirm flameshot
 sudo pacman -S --needed --noconfirm redshift
 sudo pacman -S --needed --noconfirm gnome-disk-utility
+sudo pacman -S --needed --noconfirm playerctl
 
 # Office
 sudo pacman -S --needed --noconfirm okular
@@ -40,11 +48,6 @@ sudo pacman -S --needed --noconfirm wine-staging
 sudo pacman -S --needed --noconfirm wine-gecko
 sudo pacman -S --needed --noconfirm wine-mono
 
-# Printer - HP Printer
-sudo pacman -S --needed --noconfirm system-config-printer
-sudo pacman -S --needed --noconfirm cups
-sudo pacman -S --needed --noconfirm hplip
-sudo systemctl enable --now cups.service
 
 # Thunar file manager with extras
 sudo pacman -S --needed --noconfirm thunar
@@ -56,6 +59,10 @@ sudo pacman -S --needed --noconfirm android-udev
 sudo pacman -S --needed --noconfirm gvfs-mtp
 sudo pacman -S --needed --noconfirm ntfs-3g
 sudo pacman -S --needed --noconfirm exfatprogs
+
+
+# Install all nerd fonts
+sudo pacman -S --needed --noconfirm $(pacman -Sgq nerd-fonts)
 
 
 # Development
@@ -72,13 +79,36 @@ sh scripts/yay
 sh scripts/i3setup
 sh scripts/dotfiles
 sh scripts/audio
-sh scripts/ddc
+
+
+while true; do
+  echo "Which backlight? (ddc for desktops, brightnessctl for laptops)"
+  echo "1) brightnessctl"
+  echo "2) ddc"
+
+  read -rp "Enter choice (1,2): " choice
+
+  case "$choice" in
+    1)
+      DKMS="brightnessctl"
+      break
+      ;;
+    2)
+      DKMS="ddc"
+      break
+      ;;    
+    *)
+      echo "Invalid choice. Try again."
+      ;;
+  esac
+done
+echo "Selected: $BACKLIGHT"
+
+sh scripts/$BACKLIGHT
+
+sh scripts/printer
 sh scripts/flatpak
 
 
-
-
-
-
-
-
+# Ask if ddcutil or brightnessctl
+# Ask if nvidia

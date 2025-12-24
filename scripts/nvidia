@@ -1,7 +1,33 @@
 #!/usr/bin/env bash
 
 sudo pacman -S --needed --noconfirm dkms
-sudo pacman -S --needed --noconfirm nvidia-open-dkms
+
+while true; do
+  echo "Which dkms? (open-dkms for newer cards, like RTX5070)"
+  echo "1) nvidia-open-dkms"
+  echo "2) nvidia-dkms"
+
+  read -rp "Enter choice (1,2): " choice
+
+  case "$choice" in
+    1)
+      DKMS="nvidia-open-dkms"
+      break
+      ;;
+    2)
+      DKMS="nvidia-dkms"
+      break
+      ;;    
+    *)
+      echo "Invalid choice. Try again."
+      ;;
+  esac
+done
+echo "Selected: $DKMS"
+
+sudo pacman -S --needed --noconfirm $DKMS
+
+
 sudo pacman -S --needed --noconfirm libva-nvidia-driver
 sudo pacman -S --needed --noconfirm nvidia-utils
 sudo pacman -S --needed --noconfirm lib32-nvidia-utils
@@ -9,3 +35,7 @@ sudo pacman -S --needed --noconfirm nvidia-settings
 sudo pacman -S --needed --noconfirm opencl-nvidia
 sudo pacman -S --needed --noconfirm vulkan-icd-loader
 sudo pacman -S --needed --noconfirm lib32-vulkan-icd-loader
+
+sh kernel-headers
+
+

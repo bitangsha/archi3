@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+
+sudo pacman -S --needed --noconfirm i3-wm
+sudo pacman -S --needed --noconfirm i3blocks
+
 # power profiles
 sudo pacman -S --needed --noconfirm power-profiles-daemon
-sudo systemctl enable --now power-profiles-daemon.service
+
+if systemctl is-enabled power-profiles-daemon.service >/dev/null 2>&1; then
+  :
+else
+  sudo systemctl enable --now power-profiles-daemon.service
+fi

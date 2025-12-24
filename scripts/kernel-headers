@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+kernels=$(ls /usr/lib/modules)
+
+for k in $kernels; do
+  case "$k" in
+    *arch*)
+      pkg="linux-headers"
+      ;;
+    *lts*)
+      pkg="linux-lts-headers"
+      ;;
+    *zen*)
+      pkg="linux-zen-headers"
+      ;;
+    *hardened*)
+      pkg="linux-hardened-headers"
+      ;;
+    *)
+      echo "Unknown kernel: $k — skipping"
+      continue
+      ;;
+  esac
+
+  echo "Installing headers for kernel: $k → $pkg"
+  sudo pacman -S --needed --noconfirm "$pkg"
+done
