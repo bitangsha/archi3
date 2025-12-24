@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+sudo pacman -S --needed --noconfirm dkms
+sudo pacman -S --needed --noconfirm nvidia-open-dkms
+sudo pacman -S --needed --noconfirm libva-nvidia-driver
+sudo pacman -S --needed --noconfirm nvidia-utils
+sudo pacman -S --needed --noconfirm lib32-nvidia-utils
+sudo pacman -S --needed --noconfirm nvidia-settings
+sudo pacman -S --needed --noconfirm opencl-nvidia
+sudo pacman -S --needed --noconfirm vulkan-icd-loader
+sudo pacman -S --needed --noconfirm lib32-vulkan-icd-loader

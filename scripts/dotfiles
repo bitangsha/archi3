@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Create symlinks to dotfiles
+
+ln -s "$(pwd)/../dotfiles/picom" ~/.config/picom
+ln -s "$(pwd)/../dotfiles/i3" ~/.config/i3
+ln -s "$(pwd)/../dotfiles/i3blocks" ~/.config/i3blocks
+ln -s "$(pwd)/../dotfiles/rofi" ~/.config/rofi
+ln -s "$(pwd)/../dotfiles/xfce4" ~/.config/xfce4
+ln -s "$(pwd)/../dotfiles/.bashrc" ~/.bashrc
+ln -s "$(pwd)/../dotfiles/.xinitrc" ~/.xinitrc
+
+
+# Create symlink to wallpapers
+
+mkdir -p ~/Pictures
+ln -s "$(pwd)/../Wallpapers" ~/Pictures/Wallpapers

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+sudo pacman -S --needed --noconfirm flatpak
+
+
+flatpak install -y org.videolan.VLC
+flatpak install -y com.vysp3r.ProtonPlus
+flatpak install -y com.obsproject.Studio
+flatpak install -y com.heroicgameslauncher.hgl
+flatpak install -y com.brave.Browser
+flatpak install -y org.gnome.Brasero
+flatpak install -y org.kde.kdenlive
+flatpak install -y io.github.radiolamp.mangojuice
+flatpak install -y org.freedesktop.Platform.VulkanLayer.MangoHud
+flatpak install -y flathub com.github.wwmm.easyeffects
+flatpak install -y com.dec05eba.gpu_screen_recorder
+flatpak install -y org.qbittorrent.qBittorrent
+
+

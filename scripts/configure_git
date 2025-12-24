@@ -1,0 +1,16 @@
+#!/bin/sh
+
+sudo pacman -S --needed --noconfirm git
+
+echo "Setting up Git global configuration..."
+
+printf "Enter Git username: "
+read git_username
+
+printf "Enter Git email: "
+read git_email
+
+git config --global user.name "$git_username"
+git config --global user.email "$git_email"
+
+git config --global --list | grep -E 'user.name|user.email'
