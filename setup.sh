@@ -23,6 +23,7 @@ sudo pacman -S --needed --noconfirm nwg-look
 
 # Utilities
 sudo pacman -S --needed --noconfirm alacritty
+sudo pacman -S --needed --noconfirm polybar
 sudo pacman -S --needed --noconfirm rofi
 sudo pacman -S --needed --noconfirm firefox
 sudo pacman -S --needed --noconfirm nano
@@ -31,6 +32,7 @@ sudo pacman -S --needed --noconfirm flameshot
 sudo pacman -S --needed --noconfirm redshift
 sudo pacman -S --needed --noconfirm gnome-disk-utility
 sudo pacman -S --needed --noconfirm playerctl
+sudo pacman -S --needed --noconfirm xdg-desktop-portal-gnome
 
 # Office
 sudo pacman -S --needed --noconfirm okular

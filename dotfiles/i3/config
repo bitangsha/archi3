@@ -334,6 +334,9 @@ gaps outer 10
 smart_gaps on
 
 
+exec --no-startup-id ~/.config/polybar/launch.sh
+
+
 
 
 
