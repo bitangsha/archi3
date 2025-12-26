@@ -33,6 +33,7 @@ sudo pacman -S --needed --noconfirm redshift
 sudo pacman -S --needed --noconfirm gnome-disk-utility
 sudo pacman -S --needed --noconfirm playerctl
 sudo pacman -S --needed --noconfirm xdg-desktop-portal-gnome
+sudo pacman -S --needed --noconfirm xed
 
 # Office
 sudo pacman -S --needed --noconfirm okular
@@ -61,6 +62,8 @@ sudo pacman -S --needed --noconfirm android-udev
 sudo pacman -S --needed --noconfirm gvfs-mtp
 sudo pacman -S --needed --noconfirm ntfs-3g
 sudo pacman -S --needed --noconfirm exfatprogs
+sudo pacman -S --needed --noconfirm file-roller 
+sudo pacman -S --needed --noconfirm thunar-archive-plugin
 
 
 # Install all nerd fonts

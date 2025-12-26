@@ -330,7 +330,7 @@ default_floating_border pixel 0
 
 # Gaps between windows - looks cool
 gaps inner 10
-gaps outer 10
+gaps outer 2
 smart_gaps on
 
 
