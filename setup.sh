@@ -34,6 +34,13 @@ sudo pacman -S --needed --noconfirm gnome-disk-utility
 sudo pacman -S --needed --noconfirm playerctl
 sudo pacman -S --needed --noconfirm xdg-desktop-portal-gnome
 sudo pacman -S --needed --noconfirm xed
+sudo pacman -S --needed --noconfirm imv
+
+# Music player
+sudo pacman -S --needed --noconfirm mpc
+sudo pacman -S --needed --noconfirm mpd
+sudo pacman -S --needed --noconfirm rmpc
+
 
 # Office
 sudo pacman -S --needed --noconfirm okular
@@ -64,6 +71,8 @@ sudo pacman -S --needed --noconfirm ntfs-3g
 sudo pacman -S --needed --noconfirm exfatprogs
 sudo pacman -S --needed --noconfirm file-roller 
 sudo pacman -S --needed --noconfirm thunar-archive-plugin
+# Make thunar default file manager - otherwise when you click on "show folder" on firefox, it wont work
+xdg-mime default thunar.desktop inode/directory
 
 
 # Install all nerd fonts
@@ -85,6 +94,14 @@ sh scripts/i3setup
 sh scripts/dotfiles
 sh scripts/audio
 
+
+
+
+sh scripts/printer
+sh scripts/flatpak
+
+
+# Ask if ddcutil or brightnessctl
 
 while true; do
   echo "Which backlight? (ddc for desktops, brightnessctl for laptops)"
@@ -108,12 +125,14 @@ while true; do
   esac
 done
 echo "Selected: $BACKLIGHT"
-
 sh scripts/$BACKLIGHT
 
-sh scripts/printer
-sh scripts/flatpak
 
 
-# Ask if ddcutil or brightnessctl
+
+
 # Ask if nvidia
+
+
+
+

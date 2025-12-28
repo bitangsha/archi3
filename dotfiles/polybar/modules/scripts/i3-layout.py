@@ -18,9 +18,12 @@ ICON_TILE  = ""
 ICON_STACK = ""
 ICON_TAB   = "󰓩"
 
-LABEL_TILE  = "Tile"
-LABEL_STACK = "Stack"
-LABEL_TAB   = "Tab"
+#LABEL_TILE  = "Tile"
+#LABEL_STACK = "Stack"
+#LABEL_TAB   = "Tab"
+LABEL_TILE  = ""
+LABEL_STACK = ""
+LABEL_TAB   = ""
 # -----------------------------------------------------
 
 def get_tree():

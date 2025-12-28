@@ -9,9 +9,13 @@ ln -sfn ~/archi3/dotfiles/rofi ~/.config/rofi
 ln -sfn ~/archi3/dotfiles/xfce4 ~/.config/xfce4
 ln -sfn ~/archi3/dotfiles/polybar ~/.config/polybar
 ln -sfn ~/archi3/dotfiles/alacritty ~/.config/alacritty
+ln -sfn ~/archi3/dotfiles/dunst ~/.config/dunst
 ln -sfn ~/archi3/dotfiles/.bashrc ~/.bashrc
 ln -sfn ~/archi3/dotfiles/.xinitrc ~/.xinitrc
 
+# Configure mpd
+ln -sfn ~/archi3/dotfiles/mpd ~/.config/mpd
+systemctl --user enable --now mpd.service
 
 # Create symlink to wallpapers
 
